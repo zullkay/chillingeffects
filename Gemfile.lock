@@ -1,3 +1,12 @@
+GIT
+  remote: git@github.com:thoughtbot/formulaic.git
+  revision: ce554204a3773724da14b1affee8140d268c876a
+  specs:
+    formulaic (0.0.1)
+      activesupport
+      capybara
+      i18n
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -328,6 +337,7 @@ DEPENDENCIES
   fakeweb
   flutie
   foreman
+  formulaic!
   guard-spork
   high_voltage
   jquery-rails

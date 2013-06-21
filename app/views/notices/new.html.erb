@@ -8,7 +8,7 @@
       <h4><span>Step 1.</span> Describe the Notice</h4>
       <p>Provide us with information about the DMCA takedown notice you <em>sent</em> or <em>received</em>.</p>
       <div class="body-wrapper left main">
-        <%= form.input :title, label: "Notice Title" %>
+        <%= form.input :title %>
         <%= form.input :subject %>
         <%= form.input :date_sent, as: :string, placeholder: "YYYY-MM-DD" %>
         <%= form.input :date_received, as: :string, placeholder: "YYYY-MM-DD" %>
@@ -23,7 +23,7 @@
         %>
       </div>
       <div class="body-wrapper right attach">
-        <%= form.input :body, label: "Notice Body" %>
+        <%= form.input :body %>
         <%= form.input :legal_other, label: "Legal (Other)" %>
         <%= form.simple_fields_for(:file_uploads) do |file_uploads_form| %>
           <%= file_uploads_form.input :file, label: 'Attach Notice' %>
@@ -56,22 +56,21 @@
         <p>Enter information about the <b><%= role %></b> of the DMCA takedown notice.</p>
         <%= roles_form.input :name, as: :hidden %>
         <%= roles_form.simple_fields_for(:entity) do |entity_form| %>
-          <div class="body-wrapper left required">
-            <%= entity_form.input :name, label: "Name" %>
-            <%= entity_form.input :kind,
-              label: "#{role} Kind", prompt: nil, collection: Entity::KINDS %>
-          </div>
-          <div class="body-wrapper right optional">
-            <%= entity_form.input :address_line_1, label: "Address Line 1" %>
-            <%= entity_form.input :address_line_2, label: "Address Line 2" %>
-            <%= entity_form.input :city, label: "City" %>
-            <%= entity_form.input :state, label: "State", maxlength: "2" %>
-            <%= entity_form.input :zip, label: "Zip Code" %>
-            <%= entity_form.input :country_code, label: "Country" %>
-            <%= entity_form.input :phone, label: "Phone" %>
-            <%= entity_form.input :email, label: "Email" %>
-            <%= entity_form.input :url, label: "#{role} URL" %>
-          </div>
+        <div class="body-wrapper left required">
+          <%= entity_form.input :name %>
+          <%= entity_form.input :kind, prompt: nil, collection: Entity::KINDS %>
+        </div>
+        <div class="body-wrapper right optional">
+          <%= entity_form.input :address_line_1 %>
+          <%= entity_form.input :address_line_2 %>
+          <%= entity_form.input :city %>
+          <%= entity_form.input :state, maxlength: '2' %>
+          <%= entity_form.input :zip %>
+          <%= entity_form.input :country_code, label: 'Country' %>
+          <%= entity_form.input :phone %>
+          <%= entity_form.input :email %>
+          <%= entity_form.input :url %>
+        </div>
         <% end %>
       </section>
       <% step_number += 1 %>

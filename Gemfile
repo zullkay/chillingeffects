@@ -60,6 +60,7 @@ group :test do
   gem 'guard-spork'
   gem 'rb-inotify', require: false
   gem 'fakeweb'
+  gem 'formulaic', git: 'git@github.com:thoughtbot/formulaic.git'
 end
 
 group :staging, :production do

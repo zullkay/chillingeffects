@@ -1,4 +1,29 @@
 module NoticeActions
+  # def submit_recent_notice(title = "A title")
+  #   visit "/notices/new"
+
+  #   fill_form(
+  #     :notice,
+  #     title: title,
+  #     date_received: Time.now.to_s,
+  #     'Original Work URL' => 'http://www.example.com/original_work.pdf',
+  #     'Kind of Work' => 'movie',
+  #     'Work Description' => 'A series of videos and still images',
+  #     'Infringing URL' => 'http://example.com/infringing_url1'
+  #   )
+
+  #   within('section.recipient') do
+  #     fill_in "Name", with: "Recipient the first"
+  #   end
+  #   within('section.submitter') do
+  #     fill_in "Name", with: "Submitter the first"
+  #   end
+
+  #   yield if block_given?
+
+  #   click_on "Submit"
+  # end
+
   def submit_recent_notice(title = "A title")
     visit "/notices/new"
 

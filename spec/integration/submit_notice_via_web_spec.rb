@@ -71,12 +71,15 @@ feature "notice submission" do
   scenario "submitting a notice with entities" do
     submit_recent_notice do
       within('section.recipient') do
-        fill_in "Name", with: "Recipient the first"
-        select "organization", from: "Recipient Kind"
-        fill_in "Address Line 1", with: "Recipient Line 1"
-        fill_in "Address Line 2", with: "Recipient Line 2"
-        fill_in "City", with: "Recipient City"
-        fill_in "State", with: "MA"
+        fill_form(
+          :entity,
+          name: "Recipient the first",
+          address_line_1: "Recipient Line 1",
+          address_line_2: "Recipient Line 2",
+          city: "Recipient City",
+          state: "MA"
+        )
+        select "organization", from: "Kind"
         select "United States", from: "Country"
       end
 
