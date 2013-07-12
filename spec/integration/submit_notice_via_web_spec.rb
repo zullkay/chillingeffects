@@ -77,10 +77,10 @@ feature "notice submission" do
           address_line_1: "Recipient Line 1",
           address_line_2: "Recipient Line 2",
           city: "Recipient City",
-          state: "MA"
+          state: "MA",
+          kind: "organization",
+          country: "United States"
         )
-        select "organization", from: "Kind"
-        select "United States", from: "Country"
       end
 
       within('section.sender') do

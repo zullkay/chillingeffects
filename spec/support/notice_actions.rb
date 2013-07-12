@@ -1,51 +1,55 @@
 module NoticeActions
-  # def submit_recent_notice(title = "A title")
-  #   visit "/notices/new"
-
-  #   fill_form(
-  #     :notice,
-  #     title: title,
-  #     date_received: Time.now.to_s,
-  #     'Original Work URL' => 'http://www.example.com/original_work.pdf',
-  #     'Kind of Work' => 'movie',
-  #     'Work Description' => 'A series of videos and still images',
-  #     'Infringing URL' => 'http://example.com/infringing_url1'
-  #   )
-
-  #   within('section.recipient') do
-  #     fill_in "Name", with: "Recipient the first"
-  #   end
-  #   within('section.submitter') do
-  #     fill_in "Name", with: "Submitter the first"
-  #   end
-
-  #   yield if block_given?
-
-  #   click_on "Submit"
-  # end
-
   def submit_recent_notice(title = "A title")
     visit "/notices/new"
 
-    fill_in "Title", with: title
-    fill_in "Date received", with: Time.now
+    fill_form(
+      :notice,
+      title: title,
+      date_received: Time.now.to_s,
+      works: {
+        infringing_urls: {
+          url: 'http://example.com/infringing_url1'
+        },
+        url: 'http://www.example.com/original_work.pdf',
+        kind:'movie',
+        description: 'A series of videos and still images',
+      }
+    )
 
     within('section.recipient') do
       fill_in "Name", with: "Recipient the first"
     end
-    within('section.sender') do
-      fill_in "Name", with: "Sender the first"
+    within('section.submitter') do
+      fill_in "Name", with: "Submitter the first"
     end
-
-    fill_in 'Work URL', with: 'http://www.example.com/original_work.pdf'
-    fill_in 'Kind of Work', with: 'movie'
-    fill_in 'Work Description', with: 'A series of videos and still images'
-    fill_in 'Infringing URL', with: "http://example.com/infringing_url1"
 
     yield if block_given?
 
     click_on "Submit"
   end
+
+  # def submit_recent_notice(title = "A title")
+  #   visit "/notices/new"
+
+  #   fill_in "Title", with: title
+  #   fill_in "Date received", with: Time.now
+
+  #   within('section.recipient') do
+  #     fill_in "Name", with: "Recipient the first"
+  #   end
+  #   within('section.sender') do
+  #     fill_in "Name", with: "Sender the first"
+  #   end
+
+  #   fill_in 'Work URL', with: 'http://www.example.com/original_work.pdf'
+  #   fill_in 'Kind of Work', with: 'movie'
+  #   fill_in 'Work Description', with: 'A series of videos and still images'
+  #   fill_in 'Infringing URL', with: "http://example.com/infringing_url1"
+
+  #   yield if block_given?
+
+  #   click_on "Submit"
+  # end
 
   def open_recent_notice(title = "A title")
     within('#recent-notices') { click_on title }
