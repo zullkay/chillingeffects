@@ -1,8 +1,8 @@
 GIT
   remote: git@github.com:thoughtbot/formulaic.git
-  revision: ce554204a3773724da14b1affee8140d268c876a
+  revision: 33bdc51ff42862fe708f12c6effb67481bd128a9
   specs:
-    formulaic (0.0.1)
+    formulaic (0.0.3)
       activesupport
       capybara
       i18n
@@ -162,7 +162,7 @@ GEM
     metaclass (0.0.1)
     method_source (0.8.1)
     mime-types (1.23)
-    mini_portile (0.5.0)
+    mini_portile (0.5.1)
     mocha (0.13.3)
       metaclass (~> 0.0.1)
     multi_json (1.7.7)
