@@ -143,13 +143,389 @@ ActiveRecord::Schema.define(:version => 20130911174350) do
 
   add_index "file_uploads", ["notice_id"], :name => "index_file_uploads_on_notice_id"
 
-  create_table "infringing_urls", :force => true do |t|
-    t.string   "url",        :limit => 8192, :null => false
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+  create_table "infringing_urls_0", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
-  add_index "infringing_urls", ["url"], :name => "index_infringing_urls_on_url", :unique => true
+  add_index "infringing_urls_0", ["routing_key"], :name => "index_infringing_urls_0_on_routing_key"
+  add_index "infringing_urls_0", ["url"], :name => "index_infringing_urls_0_on_url", :unique => true
+
+  create_table "infringing_urls_1", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_1", ["routing_key"], :name => "index_infringing_urls_1_on_routing_key"
+  add_index "infringing_urls_1", ["url"], :name => "index_infringing_urls_1_on_url", :unique => true
+
+  create_table "infringing_urls_2", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_2", ["routing_key"], :name => "index_infringing_urls_2_on_routing_key"
+  add_index "infringing_urls_2", ["url"], :name => "index_infringing_urls_2_on_url", :unique => true
+
+  create_table "infringing_urls_3", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_3", ["routing_key"], :name => "index_infringing_urls_3_on_routing_key"
+  add_index "infringing_urls_3", ["url"], :name => "index_infringing_urls_3_on_url", :unique => true
+
+  create_table "infringing_urls_4", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_4", ["routing_key"], :name => "index_infringing_urls_4_on_routing_key"
+  add_index "infringing_urls_4", ["url"], :name => "index_infringing_urls_4_on_url", :unique => true
+
+  create_table "infringing_urls_5", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_5", ["routing_key"], :name => "index_infringing_urls_5_on_routing_key"
+  add_index "infringing_urls_5", ["url"], :name => "index_infringing_urls_5_on_url", :unique => true
+
+  create_table "infringing_urls_6", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_6", ["routing_key"], :name => "index_infringing_urls_6_on_routing_key"
+  add_index "infringing_urls_6", ["url"], :name => "index_infringing_urls_6_on_url", :unique => true
+
+  create_table "infringing_urls_7", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_7", ["routing_key"], :name => "index_infringing_urls_7_on_routing_key"
+  add_index "infringing_urls_7", ["url"], :name => "index_infringing_urls_7_on_url", :unique => true
+
+  create_table "infringing_urls_8", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_8", ["routing_key"], :name => "index_infringing_urls_8_on_routing_key"
+  add_index "infringing_urls_8", ["url"], :name => "index_infringing_urls_8_on_url", :unique => true
+
+  create_table "infringing_urls_9", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_9", ["routing_key"], :name => "index_infringing_urls_9_on_routing_key"
+  add_index "infringing_urls_9", ["url"], :name => "index_infringing_urls_9_on_url", :unique => true
+
+  create_table "infringing_urls_a", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_a", ["routing_key"], :name => "index_infringing_urls_a_on_routing_key"
+  add_index "infringing_urls_a", ["url"], :name => "index_infringing_urls_a_on_url", :unique => true
+
+  create_table "infringing_urls_b", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_b", ["routing_key"], :name => "index_infringing_urls_b_on_routing_key"
+  add_index "infringing_urls_b", ["url"], :name => "index_infringing_urls_b_on_url", :unique => true
+
+  create_table "infringing_urls_c", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_c", ["routing_key"], :name => "index_infringing_urls_c_on_routing_key"
+  add_index "infringing_urls_c", ["url"], :name => "index_infringing_urls_c_on_url", :unique => true
+
+  create_table "infringing_urls_d", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_d", ["routing_key"], :name => "index_infringing_urls_d_on_routing_key"
+  add_index "infringing_urls_d", ["url"], :name => "index_infringing_urls_d_on_url", :unique => true
+
+  create_table "infringing_urls_e", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_e", ["routing_key"], :name => "index_infringing_urls_e_on_routing_key"
+  add_index "infringing_urls_e", ["url"], :name => "index_infringing_urls_e_on_url", :unique => true
+
+  create_table "infringing_urls_etc", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_etc", ["routing_key"], :name => "index_infringing_urls_etc_on_routing_key"
+  add_index "infringing_urls_etc", ["url"], :name => "index_infringing_urls_etc_on_url", :unique => true
+
+  create_table "infringing_urls_f", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_f", ["routing_key"], :name => "index_infringing_urls_f_on_routing_key"
+  add_index "infringing_urls_f", ["url"], :name => "index_infringing_urls_f_on_url", :unique => true
+
+  create_table "infringing_urls_g", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_g", ["routing_key"], :name => "index_infringing_urls_g_on_routing_key"
+  add_index "infringing_urls_g", ["url"], :name => "index_infringing_urls_g_on_url", :unique => true
+
+  create_table "infringing_urls_h", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_h", ["routing_key"], :name => "index_infringing_urls_h_on_routing_key"
+  add_index "infringing_urls_h", ["url"], :name => "index_infringing_urls_h_on_url", :unique => true
+
+  create_table "infringing_urls_i", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_i", ["routing_key"], :name => "index_infringing_urls_i_on_routing_key"
+  add_index "infringing_urls_i", ["url"], :name => "index_infringing_urls_i_on_url", :unique => true
+
+  create_table "infringing_urls_j", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_j", ["routing_key"], :name => "index_infringing_urls_j_on_routing_key"
+  add_index "infringing_urls_j", ["url"], :name => "index_infringing_urls_j_on_url", :unique => true
+
+  create_table "infringing_urls_k", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_k", ["routing_key"], :name => "index_infringing_urls_k_on_routing_key"
+  add_index "infringing_urls_k", ["url"], :name => "index_infringing_urls_k_on_url", :unique => true
+
+  create_table "infringing_urls_l", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_l", ["routing_key"], :name => "index_infringing_urls_l_on_routing_key"
+  add_index "infringing_urls_l", ["url"], :name => "index_infringing_urls_l_on_url", :unique => true
+
+  create_table "infringing_urls_m", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_m", ["routing_key"], :name => "index_infringing_urls_m_on_routing_key"
+  add_index "infringing_urls_m", ["url"], :name => "index_infringing_urls_m_on_url", :unique => true
+
+  create_table "infringing_urls_n", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_n", ["routing_key"], :name => "index_infringing_urls_n_on_routing_key"
+  add_index "infringing_urls_n", ["url"], :name => "index_infringing_urls_n_on_url", :unique => true
+
+  create_table "infringing_urls_o", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_o", ["routing_key"], :name => "index_infringing_urls_o_on_routing_key"
+  add_index "infringing_urls_o", ["url"], :name => "index_infringing_urls_o_on_url", :unique => true
+
+  create_table "infringing_urls_p", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_p", ["routing_key"], :name => "index_infringing_urls_p_on_routing_key"
+  add_index "infringing_urls_p", ["url"], :name => "index_infringing_urls_p_on_url", :unique => true
+
+  create_table "infringing_urls_q", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_q", ["routing_key"], :name => "index_infringing_urls_q_on_routing_key"
+  add_index "infringing_urls_q", ["url"], :name => "index_infringing_urls_q_on_url", :unique => true
+
+  create_table "infringing_urls_r", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_r", ["routing_key"], :name => "index_infringing_urls_r_on_routing_key"
+  add_index "infringing_urls_r", ["url"], :name => "index_infringing_urls_r_on_url", :unique => true
+
+  create_table "infringing_urls_s", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_s", ["routing_key"], :name => "index_infringing_urls_s_on_routing_key"
+  add_index "infringing_urls_s", ["url"], :name => "index_infringing_urls_s_on_url", :unique => true
+
+  create_table "infringing_urls_t", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_t", ["routing_key"], :name => "index_infringing_urls_t_on_routing_key"
+  add_index "infringing_urls_t", ["url"], :name => "index_infringing_urls_t_on_url", :unique => true
+
+  create_table "infringing_urls_template", :force => true do |t|
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_template", ["routing_key"], :name => "index_infringing_urls_template_on_routing_key"
+  add_index "infringing_urls_template", ["url"], :name => "index_infringing_urls_template_on_url", :unique => true
+
+  create_table "infringing_urls_u", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_u", ["routing_key"], :name => "index_infringing_urls_u_on_routing_key"
+  add_index "infringing_urls_u", ["url"], :name => "index_infringing_urls_u_on_url", :unique => true
+
+  create_table "infringing_urls_v", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_v", ["routing_key"], :name => "index_infringing_urls_v_on_routing_key"
+  add_index "infringing_urls_v", ["url"], :name => "index_infringing_urls_v_on_url", :unique => true
+
+  create_table "infringing_urls_w", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_w", ["routing_key"], :name => "index_infringing_urls_w_on_routing_key"
+  add_index "infringing_urls_w", ["url"], :name => "index_infringing_urls_w_on_url", :unique => true
 
   create_table "infringing_urls_works", :id => false, :force => true do |t|
     t.integer "infringing_url_id", :null => false
@@ -158,6 +534,39 @@ ActiveRecord::Schema.define(:version => 20130911174350) do
 
   add_index "infringing_urls_works", ["infringing_url_id"], :name => "index_infringing_urls_works_on_infringing_url_id"
   add_index "infringing_urls_works", ["work_id"], :name => "index_infringing_urls_works_on_work_id"
+
+  create_table "infringing_urls_x", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_x", ["routing_key"], :name => "index_infringing_urls_x_on_routing_key"
+  add_index "infringing_urls_x", ["url"], :name => "index_infringing_urls_x_on_url", :unique => true
+
+  create_table "infringing_urls_y", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_y", ["routing_key"], :name => "index_infringing_urls_y_on_routing_key"
+  add_index "infringing_urls_y", ["url"], :name => "index_infringing_urls_y_on_url", :unique => true
+
+  create_table "infringing_urls_z", :id => false, :force => true do |t|
+    t.integer  "id",                          :null => false
+    t.string   "url",         :limit => 8192, :null => false
+    t.string   "routing_key", :limit => 3,    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "infringing_urls_z", ["routing_key"], :name => "index_infringing_urls_z_on_routing_key"
+  add_index "infringing_urls_z", ["url"], :name => "index_infringing_urls_z_on_url", :unique => true
 
   create_table "notices", :force => true do |t|
     t.string   "title",                                 :null => false

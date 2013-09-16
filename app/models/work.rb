@@ -9,28 +9,35 @@ class Work < ActiveRecord::Base
 
   accepts_nested_attributes_for :infringing_urls, :copyrighted_urls
 
-  # Similar to the hack in EntityNoticeRole, because all validations are
-  # run before all inserts, we have to save to ensure we don't have the
-  # same new InfringingUrl or CopyrightedUrl cause a unique key constraint.
-  # This means we have to save when validating, and that we could accumulate
-  # orphaned *Url model instances.
-  %w(infringing_urls copyrighted_urls).each do |relation_type|
+  %w(copyrighted_urls).each do |relation_type|
     relation_class = relation_type.classify.constantize
     define_method("validate_associated_records_for_#{relation_type}") do
-      urls_to_add = send(relation_type.to_sym).map(&:url).uniq.compact
 
-      return if urls_to_add == ['']
+      # Similar to the hack in EntityNoticeRole, because all validations are
+      # run before all inserts, we have to save to ensure we don't have the
+      # same new InfringingUrl or CopyrightedUrl cause a unique key constraint.
+      # This means we have to save when validating, and that we could accumulate
+      # orphaned *Url model instances.
+      self.send(relation_type.to_sym).map! do |instance|
+        if existing_url_relation = relation_class.find_by_url(instance.url)
+          existing_url_relation
+        else
+          instance.save
+          instance
+        end
+      end
+    end
+  end
 
-      existing_url_instances = relation_class.where(url: urls_to_add)
-      existing_urls = existing_url_instances.map(&:url)
-
-      new_urls = urls_to_add - existing_urls
-      new_url_instances = new_urls.map { |url| relation_class.create(url: url) }
-
-      send(
-        "#{relation_type}=".to_sym,
-        existing_url_instances.compact + new_url_instances
-      )
+  def validate_associated_records_for_infringing_urls
+    self.infringing_urls.map! do |instance|
+      instance.valid?
+      if existing_url_relation = InfringingUrl.find_by_url_and_routing_key(instance.url, instance.routing_key)
+        existing_url_relation
+      else
+        instance.save
+        instance
+      end
     end
   end
 
