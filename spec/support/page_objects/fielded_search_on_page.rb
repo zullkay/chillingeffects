@@ -35,6 +35,15 @@ class FieldedSearchOnPage < PageObject
     end
   end
 
+  def change_active_search_to(active_field, new_field)
+    open_advanced_search
+
+    within_last_field do
+      select(new_field.title, from: 'search-field')
+    end
+
+  end
+
   def limit_search_to_all_words_for(field)
     within(".field-group.#{field.field}") do
       check 'All words required'

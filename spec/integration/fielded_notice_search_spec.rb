@@ -199,6 +199,19 @@ feature "Fielded searches of Notices" do
         end
       end
 
+      scenario "allows a search term to be changed to another term", search: true, js: true do
+        search_on_page.add_fielded_search_for(title_field, 'lion')
+        search_on_page.run_search
+
+        search_on_page.change_active_search_to(title_field, sender_name_field)
+
+        search_on_page.within_fielded_searches do
+          expect(page).to have_select(
+            'search-field', with_options: ['Title']
+          )
+        end
+      end
+
       scenario "removes the options for a search from a previous page", search: true, js: true do
         search_on_page.add_fielded_search_for(title_field, 'lion')
         search_on_page.run_search(false)
@@ -228,6 +241,7 @@ feature "Fielded searches of Notices" do
       scenario "does not allow you to select the same search twice", search: true, js: true do
         search_on_page.add_fielded_search_for(title_field, 'lion')
 
+        save_and_open_page
         search_on_page.within_fielded_searches do
           expect(page).to have_select(
             'search-field', with_options: ['Title'], count: 1
@@ -288,6 +302,10 @@ feature "Fielded searches of Notices" do
 
   def title_field
     Notice::SEARCHABLE_FIELDS.detect { |field| field.parameter == :title }
+  end
+
+  def sender_name_field
+    Notice::SEARCHABLE_FIELDS.detect { |field| field.parameter == :sender_name }
   end
 
 end

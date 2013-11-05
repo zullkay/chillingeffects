@@ -4,6 +4,14 @@ class @AdvancedSearchRows
     @_fields = $('.search-field-data').map (_, elem) -> $(elem).data()
     @_addMore = $('#duplicate-field')
 
+  syncDataFields: ->
+    $('.field-group').map (_, el) ->
+      value = $(el).find("input[type='text']").val()
+      parameter = $(el).find("input[type='text']").attr('name')
+      console.log(value)
+      console.log(parameter)
+      $(".search-field-data[data-parameter='#{parameter}']").attr('data-value', value)
+
   displayActiveFields: ->
     noParameters = true
 
@@ -39,7 +47,6 @@ class @AdvancedSearchRows
     label = fieldGroup.find('label')
     select = fieldGroup.find('select')
 
-
     if oldName = input.attr('name')
       fieldGroup.removeClass(oldName)
       @_release(oldName)
@@ -59,18 +66,22 @@ class @AdvancedSearchRows
       @_taken.push(newName)
 
   _disableLastFieldGroup: ->
-    $('.field-group select').last().attr('disabled', 'disabled')
+    # $('.field-group select').last().attr('disabled', 'disabled')
 
   _insertFieldGroup: (field) ->
-    $('<div>')
-      .addClass("field-group")
-      .addClass(field.parameter)
-      .append($('<div>').addClass('remove-group'))
-      .append(@_buildSelect(field.parameter))
-      .append(@_buildInput(field))
-      .append(@_buildAllWordsCheckBox(field))
-      .append(@_buildAllWordsLabel(field))
-      .insertBefore(@_addMore)
+    if (typeof(field.parameter) == 'undefined') &&
+      ($(".field-group input[type='text'][value='']").length > 0)
+
+    else
+      $('<div>')
+        .addClass("field-group")
+        .addClass(field.parameter)
+        .append($('<div>').addClass('remove-group'))
+        .append(@_buildSelect(field.parameter))
+        .append(@_buildInput(field))
+        .append(@_buildAllWordsCheckBox(field))
+        .append(@_buildAllWordsLabel(field))
+        .insertBefore(@_addMore)
 
   _buildSelect: (selected) ->
     select = $('<select>').attr('name', 'search-field')
