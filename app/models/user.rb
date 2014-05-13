@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   devise :database_authenticatable,
-    :token_authenticatable, # API authentication
+   #  :token_authenticatable, # API authentication
     :recoverable,           # New users are given a temp password to reset
     :validatable            # Ensures confirmation of Password on reset
 

@@ -31,11 +31,12 @@ Chill::Application.routes.draw do
 
   resources :blog_entries, only: [:index, :show]
 
-  match :faceted_search, controller: 'notices/search', action: 'index'
+  match :faceted_search, controller: 'notices/search', action: 'index', 
+    via: [:get, :post]
 
   # N.B. no constraints on topics, that would require a db call
   match '/:recipient_name(/:topics)' => 'notices/search#index',
-    constraints: { recipient_name: /Twitter|Google/i }
+    constraints: { recipient_name: /Twitter|Google/i }, via: [:get, :post]
 
   root to: 'home#index'
 end
